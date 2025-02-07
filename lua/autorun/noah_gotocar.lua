@@ -5,8 +5,8 @@ local sam, command = sam, sam.command
 command.set_category("Teleport")
 
 command.new("gotocar")
-    :SetPermission("[Noah] gotocar", "superadmin")
-    :AddArg("player", {single_target = true})
+    :SetPermission("admin")
+	:AddArg("player", {single_target = true, allow_higher_target = true, cant_target_self = true})
     :Help("Teleport to a player's car.")
 
     :OnExecute(function(ply, target)
